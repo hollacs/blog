@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>blog on holla blog...</title>
-    <link>http://localhost:1313/tags/blog/</link>
+    <link>https://hollacs.github.io/tags/blog/</link>
     <description>Recent content in blog on holla blog...</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Feb 2025 06:58:01 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hollacs.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>我的第一篇文章</title>
-      <link>http://localhost:1313/posts/first_post/</link>
+      <link>https://hollacs.github.io/posts/first_post/</link>
       <pubDate>Mon, 10 Feb 2025 06:58:01 +0800</pubDate>
-      <guid>http://localhost:1313/posts/first_post/</guid>
+      <guid>https://hollacs.github.io/posts/first_post/</guid>
       <description>&lt;p&gt;一直想寫的 Blog，今天終於實現了！ (&lt;del&gt;拖了很久&lt;/del&gt;)&lt;/p&gt;&#xA;&lt;p&gt;第一篇不知道該寫什麼，那就先自我恭喜一下我的新 Blog 開張吧！XD&lt;/p&gt;&#xA;&lt;p&gt;未來我會寫更多文章，希望一切順利～&lt;/p&gt;&#xA;&lt;p&gt;先這樣。 (&lt;del&gt;筆墨暫時用完了&lt;/del&gt;)&lt;/p&gt;</description>
     </item>
   </channel>
