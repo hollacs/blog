@@ -8,4 +8,7 @@ links:
 
     - link: "https://github.com/hollacs"
       name: "github"
+
+    - link: "mailto:hollacs16@gmail.com"
+      name: "email"
 ---
