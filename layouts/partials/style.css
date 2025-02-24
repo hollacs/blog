@@ -1,66 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <title>ffmpeg 常用指令筆記 | holla blog...</title>
-    <link rel="canonical" href="http://localhost:1313/">
-    
-    
-    <link rel="icon" href="/favicon.ico">
-    
-
-    <link rel="stylesheet" href="/css/custom.css">
-    
-    <meta name="description" content="影片加速
-以下指令將影片加速 60 倍 (加入 -an 移除聲音)
-ffmpeg -i input.mp4 -filter:v &#34;setpts=PTS/60&#34; out.mp4
-
-移除重覆或相似的 frame
-ffmpeg -i input.mp4 -vf mpdecimate,setpts=N/FRAME_RATE/TB out.mp4
-
-1080p to 720p
-ffmpeg -i input.mp4 -vf scale=-1:720 -c:v libx264 -crf 0 -preset veryslow -c:a copy out.mp4
-
--vf scale=-1:720 調整影片解析度
-
--1 表示在維持影片的寬高比的情況下，自動計算寬度
-720 是指定高度
-
-
--crf 是畫質設定 (越低保留越多細節)
--preset 控制編碼過程的速度和最終壓縮效率
-
-ultrafast, superfast, veryfast, faster, fast, medium, slow, veryslow, placebo
-
-
--c:a copy 直接複製音軌
-
-
-想到再加。">
-    
-    
-    <meta name="keywords" content="ffmpeg">
-    
-    
-    <style>
-
-
+<style>
+{{ $themeName := .Site.Params.theme }}
+{{ $theme := index (where .Site.Data.themes "name" $themeName) 0 }}
 
 :root {
-    --site-bg: url("/black-flowertile.png");
-    --accent-color: #6B4A7B;
-    --select-color: #7A2B4D;
-    --link-color: #E8DCE7;
-    --bg-color: #4F2F48;
-    --text-color: #E8DCE7;
-    --bg-color2: #3E2439;
-    --border-color: #7B5A8B;
-    --special-text-color: #D8A7CA;
-    --post-header-color: white;
-    --post-shadow-color: rgba(40, 20, 30, 0.6);
-    --outline-color: #7B5A8B;
-    --outline-color2: #D8A7CA;
-    --list-style-type: "<no value>";
-    --list-style-image: url("/flower.png");
+    --site-bg: url("{{ $theme.site_bg }}");
+    --accent-color: {{ $theme.accent_color }};
+    --select-color: {{ $theme.select_color }};
+    --link-color: {{ $theme.link_color }};
+    --bg-color: {{ $theme.bg_color }};
+    --text-color: {{ $theme.text_color }};
+    --bg-color2: {{ $theme.bg2_color }};
+    --border-color: {{ $theme.border_color }};
+    --special-text-color: {{ $theme.special_text_color }};
+    --post-header-color: {{ $theme.post_header_color }};
+    --post-shadow-color: {{ $theme.post_shadow_color }};
+    --outline-color: {{ $theme.post_outline_color }};
+    --outline-color2: {{ $theme.post_outline_color2 }};
+    --list-style-type: "{{ $theme.list_style.type}}";
+    --list-style-image: url("{{ $theme.list_style.image}}");
 }
 
 * {
@@ -158,9 +115,11 @@ li.page-item:not(.disabled):not(.active) a:hover{
 }
 
 li {
-    
+    {{ if $theme.list_style.image }}
         list-style-image: var(--list-style-image);
-    
+    {{ else }}
+        list-style-type: var(--list-style-type);
+    {{ end }}
 }
 
 nav {margin: 1em;}
@@ -237,11 +196,14 @@ a:hover {
 .flower {
     width: 300px; 
     aspect-ratio: 1;
-    
-    
+    {{ with .Site.GetPage "section" "/sidebar/_index.md" }}
+    {{ if .Params.icon_use_flower_shape }}
+        --g:/37.02% 37.02% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+        mask: 90.078% 79.895% var(--g),33.953% 97.355% var(--g),0.004% 49.372% var(--g),35.148% 2.257% var(--g),90.817% 21.121% var(--g),radial-gradient(100% 100%,#000 25.476%,#0000 calc(25.476% + 1px));
+    {{ else }}
         border-radius: 50%;
-    
-    
+    {{ end }}
+    {{ end }}
 }
 
 #bio {
@@ -424,57 +386,3 @@ header h1 a:hover {
     }
 }
 </style>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index, follow">
-    <meta charset="utf-8">
-</head>
-<body>
-        <header><h1 id="holla blog..."><a href="http://localhost:1313/">holla blog...</a></h1></header>
-<main>
-    
-<article>
-	<h2>ffmpeg 常用指令筆記</h2>
-	
-	tags:
-	
-	<a href="/tags/ffmpeg">ffmpeg</a>
-	
-	<div class="post-header">
-	@holla <span class="timestamp">20/02/2025</span>
-	</div>
-	<p><h2 id="影片加速">影片加速</h2>
-<p>以下指令將影片加速 60 倍 (加入 -an 移除聲音)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -filter:v <span style="color:#e6db74">&#34;setpts=PTS/60&#34;</span> out.mp4
-</span></span></code></pre></div><hr>
-<h2 id="移除重覆或相似的-frame">移除重覆或相似的 frame</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf mpdecimate,setpts<span style="color:#f92672">=</span>N/FRAME_RATE/TB out.mp4
-</span></span></code></pre></div><hr>
-<h2 id="1080p-to-720p">1080p to 720p</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf scale<span style="color:#f92672">=</span>-1:720 -c:v libx264 -crf <span style="color:#ae81ff">0</span> -preset veryslow -c:a copy out.mp4
-</span></span></code></pre></div><ul>
-<li><code>-vf scale=-1:720</code> 調整影片解析度
-<ul>
-<li><code>-1</code> 表示在維持影片的寬高比的情況下，自動計算寬度</li>
-<li><code>720</code> 是指定高度</li>
-</ul>
-</li>
-<li><code>-crf</code> 是畫質設定 (越低保留越多細節)</li>
-<li><code>-preset</code> 控制編碼過程的速度和最終壓縮效率
-<ul>
-<li>ultrafast, superfast, veryfast, faster, fast, medium, slow, veryslow, placebo</li>
-</ul>
-</li>
-<li><code>-c:a copy</code> 直接複製音軌</li>
-</ul>
-<hr>
-<p>想到再加。</p></p>
-	
-	<div id="full-content"></div>
-	
-</article>
-
-    
-</main>
-</body>
-</html>
