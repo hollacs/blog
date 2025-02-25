@@ -412,9 +412,9 @@ header h1 a:hover {
         
         <li class="tag-item">
             <a href="/posts/ffmpeg_gif/">ffmpeg 將影片轉成 gif</a>
-            <p> > 如何用 FFmpeg 將影片轉成 GIF：從低品質到高品質 這個要說的東西有點多，所以我覺得可以獨立出一篇。 本文將介紹快速將影片製作成低品質 gif 的方法，再說明如何提升品質。
-低品質 GIF：簡單快速 如果只是想快速生成 GIF，不在意細節，可以用以下指令：
-ffmpeg -ss 30 -t 3 -i input.mp4 \ -vf &#34;fps=10,scale=320:-1&#34; \ -loop 0 output.gif 指令解析 -ss 30: 跳過影片前 30 秒 -t …</p>
+            <p> > 用 FFmpeg 做 GIF：從隨手搞到高大上 終於開 Blog 了，總得寫點什麼吧！最近玩了 FFmpeg，把影片變 GIF，發現還挺好玩的。從簡單到高級用法我都試了，乾脆分享出來，給自己一點成就感（拖延症終於有點成果）。準備好了嗎？來啦！
+隨便搞個 GIF：簡單快狠 想隨手做個 GIF 發給朋友炫耀一下？超簡單，用這招就行：
+ffmpeg -ss 30 -t 3 -i input.mp4 \ -vf &#34;fps=10,scale=320:-1&#34; \ -loop 0 …</p>
         </li>
         
         <li class="tag-item">

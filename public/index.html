@@ -496,52 +496,64 @@ header h1 a:hover {
             <div class="post-header">
                 @holla <span class="timestamp">25/02/2025</span>
             </div>
-            <p><h1 id="如何用-ffmpeg-將影片轉成-gif從低品質到高品質">如何用 FFmpeg 將影片轉成 GIF：從低品質到高品質</h1>
-<p>這個要說的東西有點多，所以我覺得可以獨立出一篇。 <br>
-本文將介紹快速將影片製作成低品質 gif 的方法，再說明如何提升品質。</p></p>
+            <p><h3 id="用-ffmpeg-做-gif從隨手搞到高級上">用 FFmpeg 做 GIF：從隨手搞到高級上</h3>
+<p>終於開 Blog 了，總得寫點什麼吧！最近玩了 FFmpeg，把影片變 GIF，發現還挺好玩的。從簡單到高級用法我都試了，乾脆分享出來，給自己一點成就感（<del>拖延症終於有點成果</del>）。準備好了嗎？來啦！</p>
+<hr>
+<h4 id="隨便搞個-gif簡單快狠">隨便搞個 GIF：簡單快狠</h4>
+<p>想隨手做個 GIF 發給朋友炫耀一下？超簡單，用這招就行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -ss <span style="color:#ae81ff">30</span> -t <span style="color:#ae81ff">3</span> -i input.mp4 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -vf <span style="color:#e6db74">&#34;fps=10,scale=320:-1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -loop <span style="color:#ae81ff">0</span> output.gif
+</span></span></code></pre></div></p>
             
             <div class="post-content readmore">
                 
                 
-                <div class="text-content" id="text-content-0"><hr>
-<h2 id="低品質-gif簡單快速">低品質 GIF：簡單快速</h2>
-<p>如果只是想快速生成 GIF，不在意細節，可以用以下指令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -ss <span style="color:#ae81ff">30</span> -t <span style="color:#ae81ff">3</span> -i input.mp4 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -vf <span style="color:#e6db74">&#34;fps=10,scale=320:-1&#34;</span> <span style="color:#ae81ff">\ …</span></span></span></span></span></code></pre></div></div>
-                <div class="full-content" id="full-content-0" style="display: none;"><hr>
-<h2 id="低品質-gif簡單快速">低品質 GIF：簡單快速</h2>
-<p>如果只是想快速生成 GIF，不在意細節，可以用以下指令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -ss <span style="color:#ae81ff">30</span> -t <span style="color:#ae81ff">3</span> -i input.mp4 <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -vf <span style="color:#e6db74">&#34;fps=10,scale=320:-1&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -loop <span style="color:#ae81ff">0</span> output.gif
-</span></span></code></pre></div><h3 id="指令解析">指令解析</h3>
+                <div class="text-content" id="text-content-0"><h5 id="啥意思">啥意思？</h5>
 <ul>
-<li><code>-ss 30</code>: 跳過影片前 30 秒</li>
-<li><code>-t 3</code>: 擷取 3 秒內容</li>
-<li><code>fps=10</code>: 每秒 10 幀，畫面流暢度普通</li>
-<li><code>scale=320:-1</code>: 寬度縮到 320 像素，高度自動調整</li>
-<li><code>-loop 0</code>: 無限循環（-1 不循環，1 循環一次播放兩次）</li>
+<li><code>-ss 30</code>: 跳過前 30 秒（誰要看開頭廢話啊）</li>
+<li><code>-t 3</code>: 剪 3 秒出來，夠短才好玩</li>
+<li><code>fps=10</code>: 一秒 10 張畫面，差不多啦</li>
+<li><code>scale=320:-1</code>: 寬度壓成 320，高度它會自己算（懶人福音）</li>
+<li><code>-loop 0 …</code></li></ul></div>
+                <div class="full-content" id="full-content-0" style="display: none;"><h5 id="啥意思">啥意思？</h5>
+<ul>
+<li><code>-ss 30</code>: 跳過前 30 秒（誰要看開頭廢話啊）</li>
+<li><code>-t 3</code>: 剪 3 秒出來，夠短才好玩</li>
+<li><code>fps=10</code>: 一秒 10 張畫面，差不多啦</li>
+<li><code>scale=320:-1</code>: 寬度壓成 320，高度它會自己算（懶人福音）</li>
+<li><code>-loop 0</code>: 一直循環，-1 是不動，1 是播兩次，隨你挑</li>
 </ul>
-<h3 id="效果與用途">效果與用途</h3>
-<p>這種方法省略了複雜的優化，檔案小、生成快，但顏色可能失真（出現色塊或條紋），適合隨手分享或測試用。如果想更低品質，可以試試 <code>fps=5</code> 或 <code>scale=160:-1</code>，進一步壓縮大小。</p>
+<h5 id="效果咧">效果咧？</h5>
+<p>速度快，檔案小，但畫質嘛…有時候會有點色塊，像是復古風（<del>硬要說好聽</del>）。夠用就好啦，想更糊就改 <code>fps=5</code> 或 <code>scale=160:-1</code>，<del>隨便你玩！</del></p>
 <hr>
-<h2 id="高品質-gif畫面更精緻">高品質 GIF：畫面更精緻</h2>
-<p>若追求清晰畫質和豐富色彩，可以加入調色盤生成和優化濾鏡，試試這個指令：</p>
+<h4 id="高級版-gif我要畫質">高級版 GIF：我要畫質！</h4>
+<p>好啦，如果跟我一樣有點強迫症，想要 GIF 又清楚又漂亮，那就得加點料：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -ss <span style="color:#ae81ff">30</span> -t <span style="color:#ae81ff">3</span> -i input.mp4 <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -vf <span style="color:#e6db74">&#34;fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&#34;</span> <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -loop <span style="color:#ae81ff">0</span> output.gif
-</span></span></code></pre></div><h3 id="指令解析-1">指令解析</h3>
+</span></span></code></pre></div><h5 id="這堆啥啊">這堆啥啊？</h5>
 <ul>
-<li><code>scale=320:-1:flags=lanczos</code>: 用高品質 lanczos 演算法縮放到 320 像素寬</li>
-<li><code>split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse</code>: 分流處理，先從影片生成調色盤（<a href="https://ffmpeg.org/ffmpeg-filters.html#palettegen">palettegen</a>），再應用到輸出（<a href="https://ffmpeg.org/ffmpeg-filters.html#paletteuse">paletteuse</a>），提升色彩準確度</li>
+<li><code>-ss 30</code> 和 <code>-t 3</code>: 跟上面一樣，剪 3 秒。</li>
+<li><code>fps=10</code>: 還是 10 幀，流暢就好。</li>
+<li><code>scale=320:-1:flags=lanczos</code>: 用高級算法縮放，看起來比較順眼。</li>
+<li>那堆 <code>split</code>、<code>palettegen</code>、<code>paletteuse</code>: 簡單說就是弄個專屬調色盤，顏色不會亂七八糟。</li>
+<li><code>-loop 0</code>: 一直播，爽！</li>
 </ul>
-<h3 id="進階調整">進階調整</h3>
+<h5 id="有啥不一樣">有啥不一樣？</h5>
+<p>畫面清楚，顏色漂亮，像精心剪輯的那種（<del>適合拿去裝專業</del>）。檔案會大一點，跑起來也慢一點，但值得啦！</p>
+<h5 id="進階小撇步">進階小撇步</h5>
 <ul>
-<li><code>stats_mode</code>: 控制調色盤生成方式，<code>full</code>（預設，整體畫面）、<code>diff</code>（僅移動部分）或 <code>single</code>（每幀獨立）。例如：<code>palettegen=stats_mode=single &amp; paletteuse=new=1</code></li>
-<li><code>dither</code>: 選擇抖動演算法，<code>bayer</code>（確定性）、錯誤擴散（如預設 <code>sierra2_4a</code>）或 <code>none</code>（無抖動）。用 <code>bayer</code> 時可搭配 <code>bayer_scale</code> 測試效果。</li>
+<li>想每幀都完美？加 <code>palettegen=stats_mode=single &amp; paletteuse=new=1</code>。</li>
+<li>顏色抖動怪怪的？試試 <code>dither=bayer</code> 或 <code>dither=none</code>，看哪個順眼。</li>
 </ul>
-<h3 id="效果與用途-1">效果與用途</h3>
-<p>這種方法生成的 GIF 畫質細膩，色彩自然，適合展示需要高視覺效果的場合。當然，檔案會稍大，處理時間也較長。</p></div>
+<hr>
+<h4 id="結論隨心情挑吧">結論：隨心情挑吧！</h4>
+<ul>
+<li><strong>隨手版</strong>: 快、簡單，適合懶人（比如我）。</li>
+<li><strong>高級版</strong>: 費點心，但成果超有面子。</li>
+</ul>
+<p>FFmpeg 真的挺好玩的，能搞定需求就夠了。想學更多？去翻翻 <a href="https://ffmpeg.org">FFmpeg 官網</a>，或者我之後再寫（<del>如果沒拖延的話</del>）。</p></div>
                 <summary id="read-more-btn" onclick="toggleReadMore( 0 )" style="display: inline;">read more</summary>
                 
             </div>
