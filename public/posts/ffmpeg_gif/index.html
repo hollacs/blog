@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <title>ffmpeg 常用指令筆記 | holla blog...</title>
+    <title>ffmpeg 將影片轉成 gif | holla blog...</title>
     <link rel="canonical" href="http://localhost:1313/">
     
     
@@ -10,35 +10,46 @@
 
     <link rel="stylesheet" href="/css/custom.css">
     
-    <meta name="description" content="影片加速
-以下指令將影片加速 60 倍 (加入 -an 移除聲音)
-ffmpeg -i input.mp4 -filter:v &#34;setpts=PTS/60&#34; out.mp4
+    <meta name="description" content="如何用 FFmpeg 將影片轉成 GIF：從低品質到高品質
+這個要說的東西有點多，所以我覺得可以獨立出一篇。 
+本文將介紹快速將影片製作成低品質 gif 的方法，再說明如何提升品質。
 
-移除重覆或相似的 frame
-ffmpeg -i input.mp4 -vf mpdecimate,setpts=N/FRAME_RATE/TB out.mp4
+低品質 GIF：簡單快速
+如果只是想快速生成 GIF，不在意細節，可以用以下指令：
+ffmpeg -ss 30 -t 3 -i input.mp4 \
+    -vf &#34;fps=10,scale=320:-1&#34; \
+    -loop 0 output.gif
+指令解析
 
-1080p to 720p
-ffmpeg -i input.mp4 -vf scale=-1:720 -c:v libx264 -crf 0 -preset veryslow -c:a copy out.mp4
+-ss 30: 跳過影片前 30 秒
+-t 3: 擷取 3 秒內容
+fps=10: 每秒 10 幀，畫面流暢度普通
+scale=320:-1: 寬度縮到 320 像素，高度自動調整
+-loop 0: 無限循環（-1 不循環，1 循環一次播放兩次）
 
--vf scale=-1:720 調整影片解析度
+效果與用途
+這種方法省略了複雜的優化，檔案小、生成快，但顏色可能失真（出現色塊或條紋），適合隨手分享或測試用。如果想更低品質，可以試試 fps=5 或 scale=160:-1，進一步壓縮大小。
 
--1 表示在維持影片的寬高比的情況下，自動計算寬度
-720 是指定高度
+高品質 GIF：畫面更精緻
+若追求清晰畫質和豐富色彩，可以加入調色盤生成和優化濾鏡，試試這個指令：
+ffmpeg -ss 30 -t 3 -i input.mp4 \
+    -vf &#34;fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&#34; \
+    -loop 0 output.gif
+指令解析
 
+scale=320:-1:flags=lanczos: 用高品質 lanczos 演算法縮放到 320 像素寬
+split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse: 分流處理，先從影片生成調色盤（palettegen），再應用到輸出（paletteuse），提升色彩準確度
 
--crf 是畫質設定 (越低保留越多細節)
--preset 控制編碼過程的速度和最終壓縮效率
+進階調整
 
-ultrafast, superfast, veryfast, faster, fast, medium, slow, veryslow, placebo
+stats_mode: 控制調色盤生成方式，full（預設，整體畫面）、diff（僅移動部分）或 single（每幀獨立）。例如：palettegen=stats_mode=single &amp; paletteuse=new=1
+dither: 選擇抖動演算法，bayer（確定性）、錯誤擴散（如預設 sierra2_4a）或 none（無抖動）。用 bayer 時可搭配 bayer_scale 測試效果。
 
-
--c:a copy 直接複製音軌
-
-
-想到再加。">
+效果與用途
+這種方法生成的 GIF 畫質細膩，色彩自然，適合展示需要高視覺效果的場合。當然，檔案會稍大，處理時間也較長。">
     
     
-    <meta name="keywords" content="ffmpeg">
+    <meta name="keywords" content="ffmpeg, gif">
     
     
     <style>
@@ -434,41 +445,54 @@ header h1 a:hover {
 <main>
     
 <article>
-	<h2>ffmpeg 常用指令筆記</h2>
+	<h2>ffmpeg 將影片轉成 gif</h2>
 	
 	tags:
 	
-	<a href="/tags/ffmpeg">ffmpeg</a>
+	<a href="/tags/ffmpeg">ffmpeg</a>,
+	
+	<a href="/tags/gif">gif</a>
 	
 	<div class="post-header">
-	@holla <span class="timestamp">20/02/2025</span>
+	@holla <span class="timestamp">25/02/2025</span>
 	</div>
-	<p><h2 id="影片加速">影片加速</h2>
-<p>以下指令將影片加速 60 倍 (加入 -an 移除聲音)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -filter:v <span style="color:#e6db74">&#34;setpts=PTS/60&#34;</span> out.mp4
-</span></span></code></pre></div><hr>
-<h2 id="移除重覆或相似的-frame">移除重覆或相似的 frame</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf mpdecimate,setpts<span style="color:#f92672">=</span>N/FRAME_RATE/TB out.mp4
-</span></span></code></pre></div><hr>
-<h2 id="1080p-to-720p">1080p to 720p</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf scale<span style="color:#f92672">=</span>-1:720 -c:v libx264 -crf <span style="color:#ae81ff">0</span> -preset veryslow -c:a copy out.mp4
-</span></span></code></pre></div><ul>
-<li><code>-vf scale=-1:720</code> 調整影片解析度
-<ul>
-<li><code>-1</code> 表示在維持影片的寬高比的情況下，自動計算寬度</li>
-<li><code>720</code> 是指定高度</li>
-</ul>
-</li>
-<li><code>-crf</code> 是畫質設定 (越低保留越多細節)</li>
-<li><code>-preset</code> 控制編碼過程的速度和最終壓縮效率
-<ul>
-<li>ultrafast, superfast, veryfast, faster, fast, medium, slow, veryslow, placebo</li>
-</ul>
-</li>
-<li><code>-c:a copy</code> 直接複製音軌</li>
-</ul>
+	<p><h1 id="如何用-ffmpeg-將影片轉成-gif從低品質到高品質">如何用 FFmpeg 將影片轉成 GIF：從低品質到高品質</h1>
+<p>這個要說的東西有點多，所以我覺得可以獨立出一篇。 <br>
+本文將介紹快速將影片製作成低品質 gif 的方法，再說明如何提升品質。</p>
 <hr>
-<p>想到再加。</p></p>
+<h2 id="低品質-gif簡單快速">低品質 GIF：簡單快速</h2>
+<p>如果只是想快速生成 GIF，不在意細節，可以用以下指令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -ss <span style="color:#ae81ff">30</span> -t <span style="color:#ae81ff">3</span> -i input.mp4 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -vf <span style="color:#e6db74">&#34;fps=10,scale=320:-1&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -loop <span style="color:#ae81ff">0</span> output.gif
+</span></span></code></pre></div><h3 id="指令解析">指令解析</h3>
+<ul>
+<li><code>-ss 30</code>: 跳過影片前 30 秒</li>
+<li><code>-t 3</code>: 擷取 3 秒內容</li>
+<li><code>fps=10</code>: 每秒 10 幀，畫面流暢度普通</li>
+<li><code>scale=320:-1</code>: 寬度縮到 320 像素，高度自動調整</li>
+<li><code>-loop 0</code>: 無限循環（-1 不循環，1 循環一次播放兩次）</li>
+</ul>
+<h3 id="效果與用途">效果與用途</h3>
+<p>這種方法省略了複雜的優化，檔案小、生成快，但顏色可能失真（出現色塊或條紋），適合隨手分享或測試用。如果想更低品質，可以試試 fps=5 或 scale=160:-1，進一步壓縮大小。</p>
+<hr>
+<h2 id="高品質-gif畫面更精緻">高品質 GIF：畫面更精緻</h2>
+<p>若追求清晰畫質和豐富色彩，可以加入調色盤生成和優化濾鏡，試試這個指令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -ss <span style="color:#ae81ff">30</span> -t <span style="color:#ae81ff">3</span> -i input.mp4 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -vf <span style="color:#e6db74">&#34;fps=10,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -loop <span style="color:#ae81ff">0</span> output.gif
+</span></span></code></pre></div><h3 id="指令解析-1">指令解析</h3>
+<ul>
+<li><code>scale=320:-1:flags=lanczos</code>: 用高品質 lanczos 演算法縮放到 320 像素寬</li>
+<li><code>split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse</code>: 分流處理，先從影片生成調色盤（<a href="https://ffmpeg.org/ffmpeg-filters.html#palettegen">palettegen</a>），再應用到輸出（<a href="https://ffmpeg.org/ffmpeg-filters.html#paletteuse">paletteuse</a>），提升色彩準確度</li>
+</ul>
+<h3 id="進階調整">進階調整</h3>
+<ul>
+<li><code>stats_mode</code>: 控制調色盤生成方式，<code>full</code>（預設，整體畫面）、<code>diff</code>（僅移動部分）或 <code>single</code>（每幀獨立）。例如：<code>palettegen=stats_mode=single &amp; paletteuse=new=1</code></li>
+<li><code>dither</code>: 選擇抖動演算法，<code>bayer</code>（確定性）、錯誤擴散（如預設 <code>sierra2_4a</code>）或 <code>none</code>（無抖動）。用 <code>bayer</code> 時可搭配 <code>bayer_scale</code> 測試效果。</li>
+</ul>
+<h3 id="效果與用途-1">效果與用途</h3>
+<p>這種方法生成的 GIF 畫質細膩，色彩自然，適合展示需要高視覺效果的場合。當然，檔案會稍大，處理時間也較長。</p></p>
 	
 	<div id="full-content"></div>
 	
