@@ -1,5 +1,5 @@
 {{ define "main" }}
-<article>
+<article style="max-width:1024px;margin-left:auto;margin-right:auto;">
 	<h2>{{ .Title }}</h2>
 	{{ $tags := .Params.tags }}
 	tags:
@@ -26,5 +26,7 @@
 	</div>
 	{{ end }}
 </article>
-{{ partial "disqus.html" . }}
+<article style="max-width:1024px;margin-left:auto;margin-right:auto;">
+	{{ partial "disqus.html" . }}
+</article>
 {{ end }}
