@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>posts on holla blog...</title>
-    <link>https://hollacs.github.io/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in posts on holla blog...</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Feb 2025 18:10:58 +0800</lastBuildDate>
-    <atom:link href="https://hollacs.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ffmpeg 將影片轉成 gif</title>
-      <link>https://hollacs.github.io/posts/ffmpeg_gif/</link>
+      <link>http://localhost:1313/posts/ffmpeg_gif/</link>
       <pubDate>Tue, 25 Feb 2025 18:10:58 +0800</pubDate>
-      <guid>https://hollacs.github.io/posts/ffmpeg_gif/</guid>
+      <guid>http://localhost:1313/posts/ffmpeg_gif/</guid>
       <description>&lt;h1 id=&#34;如何用-ffmpeg-將影片轉成-gif從低品質到高品質&#34;&gt;如何用 FFmpeg 將影片轉成 GIF：從低品質到高品質&lt;/h1&gt;&#xA;&lt;p&gt;這個要說的東西有點多，所以我覺得可以獨立出一篇。 &lt;br&gt;&#xA;本文將介紹快速將影片製作成低品質 gif 的方法，再說明如何提升品質。&lt;/p&gt;</description>
     </item>
     <item>
       <title>ffmpeg 常用指令筆記</title>
-      <link>https://hollacs.github.io/posts/ffmpeg/</link>
+      <link>http://localhost:1313/posts/ffmpeg/</link>
       <pubDate>Thu, 20 Feb 2025 15:59:48 +0800</pubDate>
-      <guid>https://hollacs.github.io/posts/ffmpeg/</guid>
+      <guid>http://localhost:1313/posts/ffmpeg/</guid>
       <description>&lt;h2 id=&#34;影片加速&#34;&gt;影片加速&lt;/h2&gt;&#xA;&lt;p&gt;以下指令將影片加速 60 倍 (加入 -an 移除聲音)&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffmpeg -i input.mp4 -filter:v &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;setpts=PTS/60&amp;#34;&lt;/span&gt; out.mp4&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>我的第一篇文章</title>
-      <link>https://hollacs.github.io/posts/first_post/</link>
+      <link>http://localhost:1313/posts/first_post/</link>
       <pubDate>Mon, 10 Feb 2025 06:58:01 +0800</pubDate>
-      <guid>https://hollacs.github.io/posts/first_post/</guid>
+      <guid>http://localhost:1313/posts/first_post/</guid>
       <description>&lt;p&gt;一直想寫的 Blog，今天終於實現了！ (&lt;del&gt;拖了很久&lt;/del&gt;)&lt;/p&gt;&#xA;&lt;p&gt;第一篇不知道該寫什麼，那就先自我慶祝一下我的新 Blog 開張吧！XD&lt;/p&gt;&#xA;&lt;p&gt;未來我會寫更多文章，希望一切順利～&lt;/p&gt;&#xA;&lt;p&gt;先這樣。 (&lt;del&gt;筆墨暫時用完了&lt;/del&gt;)&lt;/p&gt;</description>
     </item>
   </channel>

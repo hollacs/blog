@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gif on holla blog...</title>
-    <link>https://hollacs.github.io/tags/gif/</link>
+    <link>http://localhost:1313/tags/gif/</link>
     <description>Recent content in gif on holla blog...</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Feb 2025 18:10:58 +0800</lastBuildDate>
-    <atom:link href="https://hollacs.github.io/tags/gif/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/gif/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ffmpeg 將影片轉成 gif</title>
-      <link>https://hollacs.github.io/posts/ffmpeg_gif/</link>
+      <link>http://localhost:1313/posts/ffmpeg_gif/</link>
       <pubDate>Tue, 25 Feb 2025 18:10:58 +0800</pubDate>
-      <guid>https://hollacs.github.io/posts/ffmpeg_gif/</guid>
+      <guid>http://localhost:1313/posts/ffmpeg_gif/</guid>
       <description>&lt;h1 id=&#34;如何用-ffmpeg-將影片轉成-gif從低品質到高品質&#34;&gt;如何用 FFmpeg 將影片轉成 GIF：從低品質到高品質&lt;/h1&gt;&#xA;&lt;p&gt;這個要說的東西有點多，所以我覺得可以獨立出一篇。 &lt;br&gt;&#xA;本文將介紹快速將影片製作成低品質 gif 的方法，再說明如何提升品質。&lt;/p&gt;</description>
     </item>
   </channel>
