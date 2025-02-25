@@ -1,7 +1,7 @@
 ---
 title: "ffmpeg 常用指令筆記"
 date: "2025-02-20T15:59:48+08:00"
-tags: ["ffmpeg"]
+tags: ["ffmpeg",]
 #title_images: ["/photo1.png", "/photo2.png",]
 #ending_images: ["/photo3.png", "/photo4.png", "/photo5.png",]
 author: "holla"
@@ -15,14 +15,11 @@ ffmpeg -i input.mp4 -filter:v "setpts=PTS/60" out.mp4
 ```
 <!--more-->
 ---
-
 ## 移除重覆或相似的 frame
 ```bash
 ffmpeg -i input.mp4 -vf mpdecimate,setpts=N/FRAME_RATE/TB out.mp4
 ```
-
 ---
-
 ## 1080p to 720p
 ```bash
 ffmpeg -i input.mp4 -vf scale=-1:720 -c:v libx264 -crf 0 -preset veryslow -c:a copy out.mp4
@@ -34,7 +31,5 @@ ffmpeg -i input.mp4 -vf scale=-1:720 -c:v libx264 -crf 0 -preset veryslow -c:a c
 - `-preset` 控制編碼過程的速度和最終壓縮效率
   - ultrafast, superfast, veryfast, faster, fast, medium, slow, veryslow, placebo
 - `-c:a copy` 直接複製音軌
-
 ---
-
 想到再加。

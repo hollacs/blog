@@ -463,7 +463,7 @@ header h1 a:hover {
             
                 <p>This is my little corner of the world! I’ll be writing about my personal life, things I’m learning, my thoughts, and some of my creative projects. Sorry if my writing isn’t the best—I’m still working on it! Just like my YouTube channel, this is my way of keeping a little diary and archiving my journey.</p>
             
-                <p>這裡是我的小天地！我會在這裡寫一些關於我的個人生活、正在學習的東西、我的想法，還有一些創意作品。我的文筆不是很好，請見諒——我還在努力改進中！就像我的 YouTube 頻道一樣，這是我記錄和保存自己東西的方式。</p>
+                <p>這裡是我的小角落，我會在這裡寫一些關於我的個人生活、正在學習的東西、我的想法，還有一些創意作品。我的文筆不是很好，請見諒——我還在努力改進中！就像我的 YouTube 頻道一樣，這是我記錄和保存自己東西的方式。</p>
             
             </div>
             </section>
@@ -501,12 +501,14 @@ header h1 a:hover {
 本文將介紹快速將影片製作成低品質 gif 的方法，再說明如何提升品質。</p></p>
             
             <div class="post-content readmore">
-                <div id="text-content"><hr>
+                
+                
+                <div class="text-content" id="text-content-0"><hr>
 <h2 id="低品質-gif簡單快速">低品質 GIF：簡單快速</h2>
 <p>如果只是想快速生成 GIF，不在意細節，可以用以下指令：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -ss <span style="color:#ae81ff">30</span> -t <span style="color:#ae81ff">3</span> -i input.mp4 <span style="color:#ae81ff">\
 </span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -vf <span style="color:#e6db74">&#34;fps=10,scale=320:-1&#34;</span> <span style="color:#ae81ff">\ …</span></span></span></span></span></code></pre></div></div>
-                <div id="full-content" style="display: none;"><hr>
+                <div class="full-content" id="full-content-0" style="display: none;"><hr>
 <h2 id="低品質-gif簡單快速">低品質 GIF：簡單快速</h2>
 <p>如果只是想快速生成 GIF，不在意細節，可以用以下指令：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -ss <span style="color:#ae81ff">30</span> -t <span style="color:#ae81ff">3</span> -i input.mp4 <span style="color:#ae81ff">\
@@ -540,8 +542,7 @@ header h1 a:hover {
 </ul>
 <h3 id="效果與用途-1">效果與用途</h3>
 <p>這種方法生成的 GIF 畫質細膩，色彩自然，適合展示需要高視覺效果的場合。當然，檔案會稍大，處理時間也較長。</p></div>
-                
-        <summary id="read-more-btn" onclick="toggleReadMore()" style="display: inline;">read more</summary>
+                <summary id="read-more-btn" onclick="toggleReadMore( 0 )" style="display: inline;">read more</summary>
                 
             </div>
             
@@ -563,13 +564,15 @@ header h1 a:hover {
 </span></span></code></pre></div></p>
             
             <div class="post-content readmore">
-                <div id="text-content"><hr>
+                
+                
+                <div class="text-content" id="text-content-1"><hr>
 <h2 id="移除重覆或相似的-frame">移除重覆或相似的 frame</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf mpdecimate,setpts<span style="color:#f92672">=</span>N/FRAME_RATE/TB out.mp4
 </span></span></code></pre></div><hr>
 <h2 id="1080p-to-720p">1080p to 720p</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf …</span></span></code></pre></div></div>
-                <div id="full-content" style="display: none;"><hr>
+                <div class="full-content" id="full-content-1" style="display: none;"><hr>
 <h2 id="移除重覆或相似的-frame">移除重覆或相似的 frame</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf mpdecimate,setpts<span style="color:#f92672">=</span>N/FRAME_RATE/TB out.mp4
 </span></span></code></pre></div><hr>
@@ -592,8 +595,7 @@ header h1 a:hover {
 </ul>
 <hr>
 <p>想到再加。</p></div>
-                
-        <summary id="read-more-btn" onclick="toggleReadMore()" style="display: inline;">read more</summary>
+                <summary id="read-more-btn" onclick="toggleReadMore( 1 )" style="display: inline;">read more</summary>
                 
             </div>
             
@@ -615,8 +617,9 @@ header h1 a:hover {
 <p>先這樣。 (<del>筆墨暫時用完了</del>)</p></p>
             
             <div class="post-content readmore">
-                <div id="text-content"></div>
-                <div id="full-content" style="display: none;"></div>
+                
+                 
+                <div id="full-content"></div>
                 
             </div>
             
@@ -624,10 +627,10 @@ header h1 a:hover {
     
     
     <script>
-    function toggleReadMore() {
-        var fullContent = document.getElementById("full-content");
-        var btnText = document.getElementById("read-more-btn");
-        var textContent = document.getElementById("text-content");
+    function toggleReadMore(index) {
+        var fullContent = document.getElementById("full-content-" + index);
+        var textContent = document.getElementById("text-content-" + index);
+        var btnText = textContent.nextElementSibling.nextElementSibling;
 
         if (fullContent.style.display === "none") {
             textContent.style.display = "none";
