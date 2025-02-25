@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ffmpeg on holla blog...</title>
-    <link>http://localhost:1313/tags/ffmpeg/</link>
+    <link>https://hollacs.github.io/tags/ffmpeg/</link>
     <description>Recent content in ffmpeg on holla blog...</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Feb 2025 18:10:58 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hollacs.github.io/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ffmpeg 將影片轉成 gif</title>
-      <link>http://localhost:1313/posts/ffmpeg_gif/</link>
+      <link>https://hollacs.github.io/posts/ffmpeg_gif/</link>
       <pubDate>Tue, 25 Feb 2025 18:10:58 +0800</pubDate>
-      <guid>http://localhost:1313/posts/ffmpeg_gif/</guid>
-      <description>&lt;h3 id=&#34;用-ffmpeg-做-gif從隨手搞到高級上&#34;&gt;用 FFmpeg 做 GIF：從隨手搞到高級上&lt;/h3&gt;&#xA;&lt;p&gt;終於開 Blog 了，總得寫點什麼吧！最近玩了 FFmpeg，把影片變 GIF，發現還挺好玩的。從簡單到高級用法我都試了，乾脆分享出來，給自己一點成就感（&lt;del&gt;拖延症終於有點成果&lt;/del&gt;）&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h4 id=&#34;隨便搞個-gif簡單快狠&#34;&gt;隨便搞個 GIF：簡單快狠&lt;/h4&gt;&#xA;&lt;p&gt;想隨手做個 GIF 傳給朋友炫耀一下？超簡單，用這招就行：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffmpeg -ss &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt; -t &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; -i input.mp4 &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    -vf &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fps=10,scale=320:-1&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    -loop &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; output.gif&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <guid>https://hollacs.github.io/posts/ffmpeg_gif/</guid>
+      <description>&lt;h3 id=&#34;用-ffmpeg-做-gif從簡單搞到高級上&#34;&gt;用 FFmpeg 做 GIF：從簡單搞到高級上&lt;/h3&gt;&#xA;&lt;p&gt;終於開 Blog 了，總得寫點什麼吧！最近玩了 FFmpeg，把影片變 GIF，發現還挺好玩的。從簡單到高級用法我都試了，乾脆分享出來，給自己一點成就感（&lt;del&gt;拖延症終於有點成果&lt;/del&gt;）&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h4 id=&#34;隨便搞個-gif簡單快狠&#34;&gt;隨便搞個 GIF：簡單快狠&lt;/h4&gt;&#xA;&lt;p&gt;想隨手做個 GIF 傳給朋友炫耀一下？超簡單，用這招就行：（只是範例，根據個人需要再調整）&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffmpeg -ss &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt; -t &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; -i input.mp4 &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    -vf &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;fps=10,scale=320:-1&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;\&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;&lt;/span&gt;    -loop &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; output.gif&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>ffmpeg 常用指令筆記</title>
-      <link>http://localhost:1313/posts/ffmpeg/</link>
+      <link>https://hollacs.github.io/posts/ffmpeg/</link>
       <pubDate>Thu, 20 Feb 2025 15:59:48 +0800</pubDate>
-      <guid>http://localhost:1313/posts/ffmpeg/</guid>
+      <guid>https://hollacs.github.io/posts/ffmpeg/</guid>
       <description>&lt;h2 id=&#34;影片加速&#34;&gt;影片加速&lt;/h2&gt;&#xA;&lt;p&gt;以下指令將影片加速 60 倍 (加入 -an 移除聲音)&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ffmpeg -i input.mp4 -filter:v &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;setpts=PTS/60&amp;#34;&lt;/span&gt; out.mp4&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>
