@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
     <title>ffmpeg 常用指令筆記 | holla blog...</title>
-    <link rel="canonical" href="http://localhost:1313/">
+    <link rel="canonical" href="https://hollacs.github.io/">
     
     
     <link rel="icon" href="/favicon.ico">
@@ -13,29 +13,7 @@
     <meta name="description" content="影片加速
 以下指令將影片加速 60 倍 (加入 -an 移除聲音)
 ffmpeg -i input.mp4 -filter:v &#34;setpts=PTS/60&#34; out.mp4
-
-移除重覆或相似的 frame
-ffmpeg -i input.mp4 -vf mpdecimate,setpts=N/FRAME_RATE/TB out.mp4
-
-1080p to 720p
-ffmpeg -i input.mp4 -vf scale=-1:720 -c:v libx264 -crf 0 -preset veryslow -c:a copy out.mp4
-
--vf scale=-1:720 調整影片解析度
-
--1 表示在維持影片的寬高比的情況下，自動計算寬度
-720 是指定高度
-
-
--crf 是畫質設定 (越低保留越多細節)
--preset 控制編碼過程的速度和最終壓縮效率
-
-ultrafast, superfast, veryfast, faster, fast, medium, slow, veryslow, placebo
-
-
--c:a copy 直接複製音軌
-
-
-想到再加。">
+">
     
     
     <meta name="keywords" content="ffmpeg">
@@ -430,7 +408,7 @@ header h1 a:hover {
     <meta charset="utf-8">
 </head>
 <body>
-        <header><h1 id="holla blog..."><a href="http://localhost:1313/">holla blog...</a></h1></header>
+        <header><h1 id="holla blog..."><a href="https://hollacs.github.io/">holla blog...</a></h1></header>
 <main>
     
 <article>
@@ -446,7 +424,9 @@ header h1 a:hover {
 	<p><h2 id="影片加速">影片加速</h2>
 <p>以下指令將影片加速 60 倍 (加入 -an 移除聲音)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -filter:v <span style="color:#e6db74">&#34;setpts=PTS/60&#34;</span> out.mp4
-</span></span></code></pre></div><hr>
+</span></span></code></pre></div></p>
+	
+	<div id="full-content"><hr>
 <h2 id="移除重覆或相似的-frame">移除重覆或相似的 frame</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf mpdecimate,setpts<span style="color:#f92672">=</span>N/FRAME_RATE/TB out.mp4
 </span></span></code></pre></div><hr>
@@ -468,9 +448,7 @@ header h1 a:hover {
 <li><code>-c:a copy</code> 直接複製音軌</li>
 </ul>
 <hr>
-<p>想到再加。</p></p>
-	
-	<div id="full-content"></div>
+<p>想到再加。</p></div>
 	
 </article>
 

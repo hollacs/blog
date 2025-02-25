@@ -13,7 +13,7 @@ draft: false
 ```bash
 ffmpeg -i input.mp4 -filter:v "setpts=PTS/60" out.mp4
 ```
-
+<!--more-->
 ---
 
 ## 移除重覆或相似的 frame
