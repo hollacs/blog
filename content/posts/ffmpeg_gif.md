@@ -14,14 +14,12 @@ draft: false
 
 #### 隨便搞個 GIF：簡單快狠
 想隨手做個 GIF 傳給朋友炫耀一下？超簡單，用這招就行：（只是範例，根據個人需要再調整）
-
+<!--more-->
 ```bash
 ffmpeg -ss 30 -t 3 -i input.mp4 \
     -vf "fps=10,scale=320:-1" \
     -loop 0 output.gif
 ```
-
-<!--more-->
 
 ##### 啥意思？
 - `-ss 30`: 跳過前 30 秒（~~誰要看開頭廢話啊~~）

@@ -11,10 +11,10 @@ draft: false
 
 ## 影片加速
 以下指令將影片加速 60 倍 (加入 -an 移除聲音)
+<!--more-->
 ```bash
 ffmpeg -i input.mp4 -filter:v "setpts=PTS/60" out.mp4
 ```
-<!--more-->
 ---
 ## 移除重覆或相似的 frame
 ```bash

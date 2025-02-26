@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="/css/custom.css">
     
     <meta name="description" content="影片加速
-以下指令將影片加速 60 倍 (加入 -an 移除聲音)
-ffmpeg -i input.mp4 -filter:v &#34;setpts=PTS/60&#34; out.mp4
-">
+以下指令將影片加速 60 倍 (加入 -an 移除聲音)">
     
     
     <meta name="keywords" content="ffmpeg">
@@ -422,11 +420,10 @@ header h1 a:hover {
 	@holla <span class="timestamp">20/02/2025</span>
 	</div>
 	<p><h2 id="影片加速">影片加速</h2>
-<p>以下指令將影片加速 60 倍 (加入 -an 移除聲音)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -filter:v <span style="color:#e6db74">&#34;setpts=PTS/60&#34;</span> out.mp4
-</span></span></code></pre></div></p>
+<p>以下指令將影片加速 60 倍 (加入 -an 移除聲音)</p></p>
 	
-	<div id="full-content"><hr>
+	<div id="full-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -filter:v <span style="color:#e6db74">&#34;setpts=PTS/60&#34;</span> out.mp4
+</span></span></code></pre></div><hr>
 <h2 id="移除重覆或相似的-frame">移除重覆或相似的 frame</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i input.mp4 -vf mpdecimate,setpts<span style="color:#f92672">=</span>N/FRAME_RATE/TB out.mp4
 </span></span></code></pre></div><hr>
