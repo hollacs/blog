@@ -3,6 +3,7 @@ title: "ffmpeg 將影片轉成 gif"
 date: "2025-02-25T18:10:58+08:00"
 tags: ["ffmpeg", "gif",]
 author: "holla"
+slug: "ffmpeg-gif"
 draft: false
 ---
 ### 用 FFmpeg 做 GIF：從簡單搞到高級上

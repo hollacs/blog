@@ -5,6 +5,7 @@ tags: ["ffmpeg",]
 #title_images: ["/photo1.png", "/photo2.png",]
 #ending_images: ["/photo3.png", "/photo4.png", "/photo5.png",]
 author: "holla"
+slug: "ffmpeg-cmds-note"
 draft: false
 ---
 

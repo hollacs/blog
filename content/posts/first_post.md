@@ -3,6 +3,7 @@ title: "我的第一篇文章"
 date: "2025-02-10T06:58:01+08:00"
 tags: ["blog"]
 author: "holla"
+slug: "first-post"
 draft: false
 ---
 
