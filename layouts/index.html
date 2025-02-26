@@ -81,7 +81,7 @@
                 <p>...</p>
                 <!-- <div class="text-content" id="text-content-{{ $index }}">{{ ( .ContentWithoutSummary | safeHTML) | truncate $limit }}</div>
                 <div class="full-content" id="full-content-{{ $index }}" style="display: none;">{{ .ContentWithoutSummary | safeHTML }}</div> -->
-                <a id="read-more-btn" href="{{ .RelPermalink }}" style="text-decoration: none;"><b>{{ .Site.Params.read_more.text.more }}</b></a>
+                <a id="read-more-btn" href="{{ .RelPermalink }}" style="text-decoration: none; color: palevioletred"><b>{{ .Site.Params.read_more.text.more }}</b></a>
                 {{ else }} 
                 <div id="full-content">{{ .ContentWithoutSummary | safeHTML }}</div>
                 {{ end }}
