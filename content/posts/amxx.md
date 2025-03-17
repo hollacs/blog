@@ -1,6 +1,6 @@
 ---
 title: "我的AMXX研究之路：跌跌撞撞的小堅持"
-date: "2025-02-20T15:59:48+08:00"
+date: "2025-03-18T05:17:56+08:00"
 tags: ["amxx","tig","npc"]
 #title_images: ["/photo1.png", "/photo2.png",]
 #ending_images: ["/photo3.png", "/photo4.png", "/photo5.png",]
