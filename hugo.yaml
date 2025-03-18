@@ -12,6 +12,7 @@ permalinks:
 
 params:
   theme: "dark-purple" # light-blue, dark-blue, light-green, light-yellow, light-pink, light-purple
+  dark_theme: "dark-purple"
   favicon: "/favicon.ico"
 
   read_more:
@@ -23,3 +24,8 @@ params:
   posts_per_page: 5 # defaults to 5 if not defined
 
   disqusShortname: "holla16"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
