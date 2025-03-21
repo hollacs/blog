@@ -34,7 +34,7 @@ body {
     background-color: var(--bg-color);
     background-image: var(--site-bg);
     margin: 0;
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-color);
 }
 
