@@ -348,7 +348,7 @@ header h1 a:hover {
 }
 
 .article-single {
-    font-size: 15px;
+    font-size: 16px;
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
@@ -390,6 +390,10 @@ header h1 a:hover {
     }
     #sidebar li {
         margin: .3em 1em;
+    }
+
+    .article-single {
+        font-size: 15px;
     }
 }
 </style>
