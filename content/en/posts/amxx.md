@@ -1,3 +1,14 @@
+---
+title: "My AMXX Journey: Stumbling but Stubborn"
+date: "2025-04-20T22:50:00+08:00"
+tags: ["amxx","tig","npc"]
+#title_images: ["/photo1.png", "/photo2.png",]
+#ending_images: ["/photo3.png", "/photo4.png", "/photo5.png",]
+author: "holla"
+slug: "amxx-en"
+draft: false
+---
+
 ### My AMXX Journey: Stumbling but Stubborn
 
 #### Zombie Mode: The Spark That Started It All
