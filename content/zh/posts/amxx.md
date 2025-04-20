@@ -11,14 +11,14 @@ draft: false
 
 ### 我的AMXX研究之路：跌跌撞撞的小堅持
 
-#### 「喪屍模式」：點燃我的熱情
+#### 「喪屍模式」：點亮我的小宇宙
 
 我的AMXX之旅，始於小時候迷上《Counter-Strike》（CS 1.6）的日子。那時我還是個新手，在討論區看到了一個名為「tig」伺服器，看到他的介紹有點吸引，抱著獵奇的心態進了去看一看。一進遊戲，我瞬間被震撼了！這伺服器模式靈感來自《Resident Evil》，把二代、三代的經典BOSS搬進遊戲，還帶點《Left 4 Dead》的味道。當我看到喪屍王扛著火箭炮轟人類時，整個呆住了，心裡直喊：「這也太誇張了吧！」快節奏的戰鬥、陰森的氛圍，讓我玩得停不下來。後來才知道，這一切都是服主用AMXX一手打造的。那一刻，我心裡燃起一團火：一個人就能做出這麼棒的東西，我也想試試啦！就這樣，我一頭栽進了AMXX的世界。
 
 以下是TiG的一段經典影片，回味當年的熱血：
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rtwg6HNA-qw?si=_YyG447DrjOgltMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-#### 第一次搞伺服器：興奮一陣，然後又亂了
+#### 第一次搞伺服器：開始一陣，然後又亂了
 
 我從零開始摸索AMXX，從那些雜亂的語法，慢慢學會寫點小程式。於是，我決定用當時一個熱門的喪屍插件（Zombie Plague）作起點來改寫打造一個全新喪屍模式伺服器！一開始沒想什麼，只是想讓喪屍王和人王像「tig」那樣炫酷，比如給喪屍王加幾招獨特攻擊，讓人王有更強的武器對抗。當程式終於跑起來時，我興奮得差點跳起來，覺得自己有點厲害！伺服器上線後，還真吸引了幾個玩家。後來我又加了等級系統，讓大家打喪屍能升級拿獎勵，結果越來越多人加入。最熱鬧時，32個位子瞬間滿員，有人甚至跑來誇：「這模式超讚！」我聽了之後開心到不行，每天守在電腦前，看著大家玩得開心，腦子裡全是怎麼讓遊戲更棒的點子。
 
