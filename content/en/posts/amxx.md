@@ -13,7 +13,7 @@ draft: false
 
 #### Zombie Mode: The Spark That Started It All
 
-My AMXX story began when I was a kid, obsessed with *Counter-Strike* (CS 1.6). I was a total newbie, but one day I found a server called “tig” on a forum. It sounded cool, so I joined. Wow, was I blown away! The server was inspired by *Resident Evil*, with bosses from the games and a bit of *Left 4 Dead*’s vibe. When I saw a zombie boss blasting humans with a rocket launcher, I was shocked, thinking, “This is wild!” The fast battles and creepy mood kept me hooked. Later, I learned the server’s creator used AMXX to build it all. That lit a fire in me: one person could make something this awesome? I wanted to try too! So, I jumped into AMXX.
+My AMXX story began when I was a kid, obsessed with *Counter-Strike* (CS 1.6). I was a total newbie, but one day I found a server called “tig” on a forum. It sounded cool, so I joined. <!--more-->Wow, was I blown away! The server was inspired by *Resident Evil*, with bosses from the games and a bit of *Left 4 Dead*’s vibe. When I saw a zombie boss blasting humans with a rocket launcher, I was shocked, thinking, “This is wild!” The fast battles and creepy mood kept me hooked. Later, I learned the server’s creator used AMXX to build it all. That lit a fire in me: one person could make something this awesome? I wanted to try too! So, I jumped into AMXX.
 
 Here’s a classic TiG video to remember those exciting days:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rtwg6HNA-qw?si=_YyG447DrjOgltMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

@@ -13,7 +13,7 @@ draft: false
 
 #### 「喪屍模式」：點亮我的小宇宙
 
-我的AMXX之旅，始於小時候迷上《Counter-Strike》（CS 1.6）的日子。那時我還是個新手，在討論區看到了一個名為「tig」伺服器，看到他的介紹有點吸引，抱著獵奇的心態進了去看一看。一進遊戲，我瞬間被震撼了！這伺服器模式靈感來自《Resident Evil》，把二代、三代的經典BOSS搬進遊戲，還帶點《Left 4 Dead》的味道。當我看到喪屍王扛著火箭炮轟人類時，整個呆住了，心裡直喊：「這也太誇張了吧！」快節奏的戰鬥、陰森的氛圍，讓我玩得停不下來。後來才知道，這一切都是服主用AMXX一手打造的。那一刻，我心裡燃起一團火：一個人就能做出這麼棒的東西，我也想試試啦！就這樣，我一頭栽進了AMXX的世界。
+我的AMXX之旅，始於小時候迷上《Counter-Strike》（CS 1.6）的日子。那時我還是個新手，在討論區看到了一個名為「tig」伺服器，看到他的介紹有點吸引，抱著獵奇的心態進了去看一看。<!--more-->一進遊戲，我瞬間被震撼了！這伺服器模式靈感來自《Resident Evil》，把二代、三代的經典BOSS搬進遊戲，還帶點《Left 4 Dead》的味道。當我看到喪屍王扛著火箭炮轟人類時，整個呆住了，心裡直喊：「這也太誇張了吧！」快節奏的戰鬥、陰森的氛圍，讓我玩得停不下來。後來才知道，這一切都是服主用AMXX一手打造的。那一刻，我心裡燃起一團火：一個人就能做出這麼棒的東西，我也想試試啦！就這樣，我一頭栽進了AMXX的世界。
 
 以下是TiG的一段經典影片，回味當年的熱血：
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rtwg6HNA-qw?si=_YyG447DrjOgltMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
