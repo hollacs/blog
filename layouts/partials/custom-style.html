@@ -1,4 +1,96 @@
 <style>
+{{/* Get theme names from config */}}
+{{ $lightThemeName := .Site.Params.lightThemeName | default "light-purple" }}
+{{ $darkThemeName := .Site.Params.darkThemeName | default "dark-purple" }}
+
+{{/* Find theme data */}}
+{{ $lightTheme := index (where .Site.Data.themes "name" $lightThemeName) 0 }}
+{{ $darkTheme := index (where .Site.Data.themes "name" $darkThemeName) 0 }}
+
+/* Theme Variables - Dynamically generated */
+html[class="light-theme"] {
+    --site-bg: url("{{ index $lightTheme "site-bg" }}");
+    --accent-color: {{ index $lightTheme "accent-color" }};
+    --select-color: {{ index $lightTheme "select-color" }};
+    --link-color: {{ index $lightTheme "link-color" }};
+    --bg-color: {{ index $lightTheme "bg-color" }};
+    --text-color: {{ index $lightTheme "text-color" }};
+    --bg-color2: {{ index $lightTheme "bg2-color" }};
+    --border-color: {{ index $lightTheme "border-color" }};
+    --special-text-color: {{ index $lightTheme "special-text-color" }};
+    --post-header-color: {{ index $lightTheme "post-header-color" }};
+    --post-shadow-color: {{ index $lightTheme "post-shadow-color" }};
+    --outline-color: {{ index $lightTheme "post-outline-color" }};
+    --outline-color2: {{ index $lightTheme "post-outline-color2" }};
+    --list-style-type: "{{ (index $lightTheme "list-style").type}}";
+    --list-style-image: url("{{ (index $lightTheme "list-style").image }}");
+
+    /* Custom selection styles for light theme */
+    ::selection {
+        background-color: var(--select-color);
+        color: var(--text-color); /* Use main text color for better contrast */
+    }
+}
+
+html[class="dark-theme"] {
+    --site-bg: url("{{ index $darkTheme "site-bg" }}");
+    --accent-color: {{ index $darkTheme "accent-color" }};
+    --select-color: {{ index $darkTheme "select-color" }};
+    --link-color: {{ index $darkTheme "link-color" }};
+    --bg-color: {{ index $darkTheme "bg-color" }};
+    --text-color: {{ index $darkTheme "text-color" }};
+    --bg-color2: {{ index $darkTheme "bg2-color" }};
+    --border-color: {{ index $darkTheme "border-color" }};
+    --special-text-color: {{ index $darkTheme "special-text-color" }};
+    --post-header-color: {{ index $darkTheme "post-header-color" }};
+    --post-shadow-color: {{ index $darkTheme "post-shadow-color" }};
+    --outline-color: {{ index $darkTheme "post-outline-color" }};
+    --outline-color2: {{ index $darkTheme "post-outline-color2" }};
+    --list-style-type: "{{ (index $darkTheme "list-style").type}}";
+    --list-style-image: url("{{ (index $darkTheme "list-style").image }}");
+
+    /* Custom selection styles for dark theme */
+    ::selection {
+        background-color: var(--select-color);
+        color: var(--text-color); /* Use main text color for better contrast */
+    }
+}
+
+/* Avatar visibility based on theme */
+html.light-theme #avatar .avatar-dark {
+    display: none;
+}
+html.light-theme #avatar .avatar-light {
+    display: block; /* Or inline-block if layout needs it */
+}
+html.dark-theme #avatar .avatar-light {
+    display: none;
+}
+html.dark-theme #avatar .avatar-dark {
+    display: block; /* Or inline-block if layout needs it */
+}
+
+/* Icon visibility based on theme */
+html.light-theme .theme-switch .icon-sun {
+    display: none;
+}
+html.light-theme .theme-switch .icon-moon {
+    display: inline-block; /* Use inline-block for SVG */
+}
+html.dark-theme .theme-switch .icon-moon {
+    display: none;
+}
+html.dark-theme .theme-switch .icon-sun {
+    display: inline-block; /* Use inline-block for SVG */
+}
+
+/* Style for the SVG icons inside the button */
+.theme-switch .icon {
+    width: 1.2em; /* Adjust size as needed */
+    height: 1.2em; /* Adjust size as needed */
+    vertical-align: middle; /* Align icon nicely with text if any */
+    fill: currentColor; /* Make SVG color inherit button text color */
+}
 
 .single-post {
     max-width: 1000px;
@@ -40,6 +132,51 @@ iframe {
     .single-post {
         font-size: 14px;
     }
+}
+
+/* Added styles for header and button */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Limit width and center the header */
+    max-width: 1024px;
+    margin: 0 auto;
+    /* Add some padding so content doesn't touch edges */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.site-header h1 {
+    flex-grow: 1;
+}
+
+/* Style for the circular button */
+.theme-switch {
+    /* Basic styling */
+    /* padding: 0.5rem; */ /* Remove padding, icons will center */
+    border: 1px solid var(--border-color, #ccc); /* Use theme variable or fallback */
+    background-color: var(--bg-color2, #f0f0f0); /* Use theme variable or fallback */
+    color: var(--text-color, #333); /* Use theme variable or fallback */
+    cursor: pointer;
+
+    /* Make it circular */
+    width: 40px; /* Example size */
+    height: 40px; /* Example size */
+    border-radius: 50%;
+
+    /* Center content (text or icon) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 0.8rem; */ /* Remove font-size, use icon's natural size */
+    line-height: 1; /* Ensure text doesn't wrap weirdly */
+}
+
+/* Optional: Hover/focus states */
+.theme-switch:hover {
+    background-color: var(--bg-color, #e0e0e0); /* Use theme variable or fallback */
+    border-color: var(--text-color, #aaa); /* Use theme variable or fallback */
 }
 
 </style>

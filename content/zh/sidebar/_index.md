@@ -2,6 +2,8 @@
 headless: true
 icon-use-flower-shape: false
 icon-path: "/icon.png"
+dark_icon_path: "/icon.png"
+light_icon_path: "/icon2.png"
 links:
     - link: "https://www.youtube.com/@holla16"
       name: "youtube"

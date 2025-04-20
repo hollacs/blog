@@ -37,6 +37,10 @@ permalinks:
 
 params:
   theme: "dark-purple" # light-blue, dark-blue, light-green, light-yellow, light-pink, light-purple
+  # Theme names for light/dark mode toggle
+  lightThemeName: "light-purple"
+  darkThemeName: "dark-purple"
+
   favicon: "/favicon.ico"
   posts-per-page: 5 # defaults to 5 if not defined
   toc-auto-numbering: false
