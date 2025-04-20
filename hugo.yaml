@@ -4,25 +4,42 @@ languageCode: 'en-us'
 titleCaseStyle: 'none' # comment this line for forcing capitalized titles on tags
 theme: "neopost"
 
-taxonomies:
-  tag: "tags"
+languages:
+  en:
+    languageCode: en-us
+    contentDir: content/en
+    languageName: english
+    weight: 1
+    params:
+      read-more:
+        length-limit: 100 # if the text exceeds this number of characters, the read more button will appear to expand the text
+        text:
+          more: "read more"
+          less: "read less"
+      text:
+        counter: "read count"
+  zh:
+    languageCode: zh-hk
+    contentDir: content/zh
+    languageName: 繁體中文
+    weight: 2
+    params:
+      read-more:
+        length-limit: 50 # if the text exceeds this number of characters, the read more button will appear to expand the text
+        text:
+          more: "閱讀更多"
+          less: "閱讀更少"
+      text:
+        counter: "閱讀人數"
 
 permalinks:
   posts: "/posts/:filename/"
 
 params:
   theme: "dark-purple" # light-blue, dark-blue, light-green, light-yellow, light-pink, light-purple
-  dark_theme: "dark-purple"
   favicon: "/favicon.ico"
-
-  read_more:
-    length_limit: 120 # if the text exceeds this number of characters, the read more button will appear to expand the text
-    text:
-      more: "read more"
-      less: "read less"
-
-  posts_per_page: 5 # defaults to 5 if not defined
-
+  posts-per-page: 5 # defaults to 5 if not defined
+  toc-auto-numbering: false
   disqusShortname: "holla16"
 
 markup:

@@ -7,8 +7,6 @@
     {{ with .Site.Params.favicon }}
     <link rel="icon" href="{{ . }}">
     {{ end }}
-
-    <link rel="stylesheet" href="/css/custom.css">
     
     <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}">
     
@@ -16,13 +14,15 @@
     <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ end }}">
     {{ end }}
     
-    {{ partial "style.css" . }}
+    {{ partial "style.html" . }}
+    {{ partial "custom-style.html" .}}
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
     <meta charset="utf-8">
 </head>
 <body>
-        <header><h1 id="{{ .Site.Title }}"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1></header>
+        <header><h1 id="{{ .Site.Title }}"><a href="{{ absLangURL "/" }}">{{ .Site.Title }}</a></h1></header>
 <main>
     {{ block "main" . }}{{ end }}
     {{ if .Param "nextprev" }}{{ partial "nextprev.html" . }}{{ end }}

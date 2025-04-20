@@ -1,5 +1,5 @@
-<div class="container">
-  <p>你是第 <span id="view-count">...</span> 個閱讀這篇文章的人</p>
+<div class="view-counter">
+  <p>{{ (index .Site.Params "text").counter }}: <span id="view-count">...</span></p>
 </div>
 <script type="module">
   import { trackView } from '/js/firebase-tracker.js';
