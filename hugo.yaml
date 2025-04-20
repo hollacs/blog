@@ -25,7 +25,7 @@ languages:
     weight: 2
     params:
       read-more:
-        length-limit: 50 # if the text exceeds this number of characters, the read more button will appear to expand the text
+        length-limit: 40 # if the text exceeds this number of characters, the read more button will appear to expand the text
         text:
           more: "閱讀更多"
           less: "閱讀更少"
