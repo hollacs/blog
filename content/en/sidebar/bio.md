@@ -1,4 +1,4 @@
 ---
 headless: true
 ---
-A secluded soul, yearning to spend fleeting time seeking courage to achieve dreams.
+A secluded soul, yearning to spend fleeting time seeking courage and achieve dreams.
