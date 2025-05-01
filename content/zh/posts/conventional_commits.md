@@ -46,10 +46,10 @@ Closes #15
 - `feat`：新功能
 - `fix`：修 Bug
 - `docs`：改文件
-- `style`：調格式，不影響程式
-- `refactor`：整理程式碼
+- `style`：改程式碼的風格，不影響邏輯
+- `refactor`：重構程式碼
 - `test`：加測試
-- `chore`：雜事（像更新套件）
+- `chore`：雜項（像更新套件）
 
 ### 為啥想用？
 
