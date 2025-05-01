@@ -32,13 +32,18 @@ draft: false
 - **正文**：想多記點細節就放這。
 - **腳註**：記大事，比如關 Issue。
 
-試個範例：
+試個兩個範例：
 
 ```
 feat(api): add user signup endpoint
 
 Added POST /signup API and updated docs.
 Closes #15
+```
+
+包含用以提示重大變更的 ! 的提交說明
+```
+feat!: send an email to the customer when a product is shipped
 ```
 
 ### 常用的類型
@@ -69,8 +74,11 @@ Closes #15
 
 - 描述短點，50 字內最好。
 - 國際專案用英文，比較統一。
-- 大改動記得寫 `BREAKING CHANGE`，像 `BREAKING CHANGE: drop old API`。
+- 大改動記得加 `!` 或寫 `BREAKING CHANGE`，像上面範例這樣
 
 ### 感想
 
 這招真的不難，感覺像幫 Git 提交訊息整理房間，以後紀錄乾淨又清楚。個人專案先試試，之後推給團隊，應該能讓大家少翻點白眼。😂 繼續練起來！
+
+### 參考:
+[https://www.conventionalcommits.org/](https://www.conventionalcommits.org/)
