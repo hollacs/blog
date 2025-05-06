@@ -7,6 +7,7 @@ slug: "pacman_conflicting"
 draft: false
 ---
 
+
 # 解決 Arch Linux 的「Failed to Commit Transaction (Conflicting Files)」錯誤
 
 作為一個 Arch Linux 的新手，我偶爾會遇到一些讓人抓頭的錯誤，比如用 `pacman` 更新系統時冒出的「Failed to commit transaction (conflicting files)」錯誤。最近我撞上了這個問題，研究一番後總算搞定，於是寫下這篇筆記，給未來的自己（也許還有你）參考！讓我們一起來看看這個錯誤是怎麼回事，以及怎麼安全地解決它。
