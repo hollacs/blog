@@ -1,0 +1,16 @@
+---
+title: "解決 Arch Linux 的「Failed to Commit Transaction (Conflicting Files)」錯誤"
+date: "2025-05-06T20:21:00+08:00"
+tags: ["blog"]
+author: "holla"
+slug: "first-post"
+draft: false
+---
+
+一直想寫的 Blog，今天終於實現了！ <!--more-->(~~拖了很久~~)
+
+第一篇不知道該寫什麼，那就先自我慶祝一下我的新 Blog 開張吧！ ......
+
+未來我會寫更多文章，希望一切順利～
+
+先這樣。 (~~筆墨暫時用完了~~)
