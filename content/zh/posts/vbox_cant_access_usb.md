@@ -8,6 +8,7 @@ draft: false
 ---
 
 最近在 Arch Linux 上用 VirtualBox，結果跳出「Can't enumerate USB devices」的錯誤，記錄一下解決的過程，免得下次又忘。
+<!--more-->
 
 ## 解決步驟
 
