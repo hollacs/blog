@@ -14,7 +14,7 @@ draft: false
 
 當你運行 `pacman -Syu` 更新系統時，可能會看到這樣的錯誤訊息：
 
-```
+```text
 error: could not prepare transaction
 error: failed to commit transaction (conflicting files)
 package: /path/to/file exists in filesystem
